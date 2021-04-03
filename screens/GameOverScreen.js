@@ -1,7 +1,8 @@
 import React from 'react'
-import { View, StyleSheet, Button, Image, Text } from 'react-native'
+import { View, StyleSheet, Image, Text } from 'react-native'
 import BodyText from '../components/BodyText'
 import TitleText from '../components/TitleText'
+import MainButton from '../components/MainButton'
 import Colors from '../constants/colors'
 
 const GameOverScreen = props => {
@@ -11,7 +12,7 @@ const GameOverScreen = props => {
       <View style={styles.imageContainer}>
         <Image
           // source={require('../assets/success.png')}
-          source={{uri: 'https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/6/2020/08/26110923/pxfuel.com-2.jpg'}}
+          source={{ uri: 'https://s3-us-west-2.amazonaws.com/uw-s3-cdn/wp-content/uploads/sites/6/2020/08/26110923/pxfuel.com-2.jpg' }}
           style={styles.image}
           resizeMode="cover"/>
       </View>
@@ -21,7 +22,7 @@ const GameOverScreen = props => {
           to guess the number <Text style={styles.highlight}>{props.userNumber}</Text>
         </BodyText>
       </View>
-      <Button title={'New Game'} onPress={() => props.onNewGame()} />
+      <MainButton onPress={props.onNewGame}>New Game</MainButton>
     </View>
   )
 }
